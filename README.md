@@ -96,6 +96,18 @@ Parámetros totales: 105,922
 - 434 features entre tablas de transacción e identidad
 - Datos reales de la plataforma de procesamiento de pagos de Vesta
 
+### Configuración
+
+1. Descargar `train_transaction.csv` y `train_identity.csv` del link de Kaggle
+2. Colocar ambos archivos en la misma carpeta que el notebook
+3. Instalar dependencias:
+```bash
+pip install torch torch-geometric networkx scikit-learn pandas matplotlib seaborn tqdm
+```
+4. Ejecutar todas las celdas en orden
+
+**Nota:** Requiere GPU con CUDA para tiempo de entrenamiento razonable. CPU funciona pero el entrenamiento será lento.
+
 ## Hallazgo Clave: Propagación de Señales de Red
 
 El hallazgo más importante: los nodos con más vecinos fraudulentos reciben scores de fraude más altos del modelo. Esto demuestra que la GNN está propagando señales de la red, no solo usando features individuales — algo que ningún modelo tabular puede hacer.
